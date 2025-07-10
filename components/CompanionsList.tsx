@@ -78,8 +78,13 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
                                 <div className="flex items-center gap-2 w-full">
 
                                     <p className="text-2xl">{duration}{' '} <span className="max-md:hidden">mins</span></p>
-{/* TODO Start right below */}
-                                    <Image src={'/icons/clock.svg'} />
+                                    {/* TODO Start right below */}
+                                    <Image
+                                        width={14}
+                                        height={14}
+                                        alt="clock"
+                                        src={'/icons/clock.svg'}
+                                        className="max-md:hidden" />
                                 </div>
                             </TableCell>
                         </TableRow>
