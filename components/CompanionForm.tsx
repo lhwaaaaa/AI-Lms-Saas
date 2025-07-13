@@ -26,6 +26,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { subjects } from "@/constants";
 import { Textarea } from "./ui/textarea";
+import { createCompanion } from "@/lib/actions/companion.actions";
+import { redirect } from "next/navigation";
 
 
 
@@ -57,9 +59,15 @@ const CompanionForm = () => {
     })
 
     // 2. Define a submit handler.
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
 
-        console.log(values)
+        const companion = await createCompanion(values);
+        if (companion) redirect(`/companions/${companion.id}`)
+        else {
+            redirect('/')
+        }
+
+
     }
 
 
