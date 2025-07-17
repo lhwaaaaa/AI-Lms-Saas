@@ -1,8 +1,8 @@
 "use client"
 
-import { cn, getSubjectColor } from "@/lib/utils"
+import { cn, configureAssistant, getSubjectColor } from "@/lib/utils"
 import { vapi } from "@/lib/vapi.sdk"
-import Lottie, { LottieComponentProps, LottieRefCurrentProps } from "lottie-react"
+import Lottie, { LottieRefCurrentProps } from "lottie-react"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import soundwaves from '../constants/soundwaves.json'
@@ -28,9 +28,19 @@ const CompanionComponent = ({ companionId, subject, title, topic, name, userName
     }
 
     const handleCall = async () => {
+        setCallStatus(CallStatus.CONNECTING)
 
+        const assistantOverrides = {
+            variableValues: {
+                subject, topic, style
+            },
+            clientMessages : ['transcript'],
+            serverMessages : [],
+        }
+        // @ts-expect-error assistantOverrides
+        vapi.start(configureAssistant(voice,style) , assistantOverrides)
     }
-    const handleDisconnect  = async () => {
+    const handleDisconnect = async () => {
 
     }
 
@@ -127,6 +137,13 @@ const CompanionComponent = ({ companionId, subject, title, topic, name, userName
 
             </section>
 
+            <section className="transcript">
+                <div className="transcript-message no-scrollbar">
+                    Messages
+                </div>
+
+                <div className="transcript-fade" />
+            </section>
 
         </section>
     )

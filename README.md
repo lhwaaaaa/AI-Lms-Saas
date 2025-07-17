@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📘 Vapi Assistant Setup Guide
 
-## Getting Started
+This guide walks you through setting up and customizing your Vapi Assistant using the Web API.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Getting Started
+
+### 1. 🔑 Get Your Web API Key
+
+Head over to the [Vapi Dashboard](https://docs.vapi.ai) and retrieve your **Web API Key**.
+You'll need this to authenticate your assistant.
+
+---
+
+## ⚙️ Create Configuration DTO
+
+The Configuration DTO (Data Transfer Object) defines the assistant's core setup and personality.
+
+```ts
+const config = {
+  assistantId: 'your-assistant-id',
+  apiKey: 'your-api-key',
+  conversationType: 'educational', // Customize: 'support', 'sales', etc.
+  language: 'en',
+  voice: 'default',
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> 💡 This sets the tone, language, and type of conversation for your assistant.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Provide Assistant Overrides
 
-## Learn More
+Use `assistantOverrides` to dynamically tailor the assistant’s responses based on user input or context.
 
-To learn more about Next.js, take a look at the following resources:
+```ts
+const assistantOverrides = {
+  variableValues: {
+    subject: 'Math',
+    topic: 'Algebra',
+    style: 'friendly',
+  },
+  clientMessages: ['transcript'], // Messages from user
+  serverMessages: [],             // Optional messages from system
+};
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> ✅ Great for adjusting tone, topic, or scope at runtime.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧪 Use the Assistant
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Pass both the configuration and the overrides when starting a conversation:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```ts
+vapi.startConversation({
+  config,
+  assistantOverrides,
+});
+```
+
+Your assistant is now set up and ready to respond contextually!
+
+---
+
+
+## 📎 Notes
+
+* Ensure your API key is kept **private** and not exposed in public repos.
+* Adjust `variableValues` to fit the assistant’s use case (e.g., customer support, educational, sales).
+
+---
+
+Feel free to fork, clone, and customize your assistant as needed!
