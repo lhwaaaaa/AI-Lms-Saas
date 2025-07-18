@@ -25,7 +25,7 @@ const Companions = async ({ searchParams }: SearchParams) => {
       </div>
     </section>
 
-      <section className="companion-grid">{
+      <section className="companion-grid ">{
         companions.map((companion) => (
 
           <CompanionCard key={companion.id} {...companion}
