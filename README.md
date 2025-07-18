@@ -1,3 +1,106 @@
+📚 AI LMS SaaS
+
+An AI-powered Learning Management System (LMS) built with Next.js 14, Clerk Auth, TailwindCSS, Supabase, ShadCN UI, and Vapi SDK. This platform helps users learn interactively by chatting with AI-driven learning companions tailored to specific subjects and topics.
+
+🚀 Live Demo
+
+🔗 Click here to try it out
+
+🌟 Features
+
+🎓 AI Companions per subject and topic
+
+💬 Real-time chat interface using Vapi SDK
+
+🔐 Secure authentication with Clerk
+
+🔖 Bookmark and revisit your favorite companions
+
+📊 Track recently completed sessions
+
+📱 Responsive and clean UI with TailwindCSS & ShadCN
+
+🧠 Smart companion configuration with overrides
+
+📦 Supabase database integration with row-level security
+
+📦 Tech Stack
+
+Framework: Next.js 14 (App Router)
+
+Styling: TailwindCSS + ShadCN UI
+
+Auth: Clerk
+
+Database: Supabase
+
+AI API: Vapi SDK
+
+State Management: Server Components + Edge Functions
+
+🛠️ Setup Instructions
+
+Clone the Repository
+
+git clone https://github.com/Mehtaab11/AI-Lms-Saas.git
+cd AI-Lms-Saas
+
+Install Dependencies
+
+npm install
+# or
+yarn
+
+Set up Environment Variables
+Create a .env.local file and add your credentials:
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_key_here
+CLERK_SECRET_KEY=your_key_here
+
+NEXT_PUBLIC_SUPABASE_URL=your_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
+SUPABASE_SERVICE_ROLE_KEY=your_key
+
+VAPI_KEY=your_api_key_here
+
+Run the Development Server
+
+npm run dev
+# or
+yarn dev
+
+🧠 Setting Up Vapi SDK
+
+Get Your Web API Key from Vapi Dashboard.
+
+Create a Configuration DTO
+This defines how your assistant should behave (subject, topic, style).
+
+Use Assistant Overrides
+
+const assistantOverrides = {
+  variableValues: {
+    subject, topic, style
+  },
+  clientMessages: ['transcript'],
+  serverMessages: [],
+};
+
+Plug It In to your assistant initialization logic.
+
+💡 How to Preview Markdown in VS Code
+
+Install the built-in extension: Markdown: Open Preview (Ctrl+Shift+V).
+
+Alternatively, use Markdown Preview Enhanced for advanced rendering.
+
+🤝 Contributing
+
+Pull requests are welcome. If you’d like to improve something, feel free to fork and PR!
+
+Crafted with ❤️ by Mehtaab Aalam
+
+
 # 📘 Vapi Assistant Setup Guide
 
 This guide walks you through setting up and customizing your Vapi Assistant using the Web API.
