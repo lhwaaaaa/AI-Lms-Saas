@@ -19,7 +19,7 @@ const Companions = async ({ searchParams }: SearchParams) => {
       <h1>Companion Library</h1>
 
       <div className="flex gap-4">
-        
+
         <SearchInput />
         <SubjectFilter />
       </div>

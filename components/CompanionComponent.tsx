@@ -6,6 +6,7 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import soundwaves from '../constants/soundwaves.json'
+import { addToSessionHistory } from "@/lib/actions/companion.actions"
 enum CallStatus {
     INACTIVE = 'INACTIVE',
     ACTIVE = 'ACTIVE',
@@ -45,7 +46,12 @@ const CompanionComponent = ({ companionId, subject, title, topic, name, userName
 
     useEffect(() => {
         const onCallStart = () => setCallStatus(CallStatus.ACTIVE)
-        const onCallEnd = () => setCallStatus(CallStatus.FINISHED)
+        const onCallEnd = () => {
+
+            setCallStatus(CallStatus.FINISHED)
+            addToSessionHistory(companionId)
+
+        }
         const onMessage = (message: Message) => {
 
             if (message.type === 'transcript' && message.transcriptType === 'final') {
@@ -102,7 +108,7 @@ const CompanionComponent = ({ companionId, subject, title, topic, name, userName
 
 
     return (
-        <section className="flex flex-col h-[100vh]">
+        <section className="flex flex-col h-[70vh]">
 
             <section className="flex gap-8 max-sm:flex-col">
 
