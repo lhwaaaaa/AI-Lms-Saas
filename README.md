@@ -4,7 +4,7 @@ An AI-powered Learning Management System (LMS) built with Next.js 14, Clerk Auth
 
 🚀 Live Demo
 
-🔗 Click here to try it out
+🔗 Click here to try it out : https://ai-lms-saas-69k8-mehtaab11s-projects.vercel.app/ 
 
 🌟 Features
 
