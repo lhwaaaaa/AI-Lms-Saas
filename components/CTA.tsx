@@ -1,11 +1,13 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
 const CTA = () => {
   return (
     <section className='cta-section'>
-      <div className='cta-badge'>Start learning your way</div>
+      <div className='cta-badge cursor-pointer' >Start learning your way</div>
       <h2 className='text-3xl font-bold'>Build and Personalise your Learning Companion</h2>
       <p>Pick a name, subject, voice, & personality - and start learning through voice conversations that feek natural and fun</p>
 

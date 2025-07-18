@@ -1,15 +1,16 @@
 import React from 'react'
-// import { Button } from "@/components/ui/button";
 import CompanionCard from '@/components/CompanionCard';
 import CompanionsList from '@/components/CompanionsList';
 import CTA from '@/components/CTA';
-import { recentSessions } from '@/constants';
+
 import { getAllCompanions, getRecentSessions } from '@/lib/actions/companion.actions';
 import { getSubjectColor } from '@/lib/utils';
+import { auth } from '@clerk/nextjs/server';
+import Link from 'next/link';
 
 const Page = async () => {
 
-
+    const { userId } = await auth();
     const companions = await getAllCompanions({ limit: 3 })
     const recentSessionsCompanions = await getRecentSessions(10)
 
@@ -30,11 +31,29 @@ const Page = async () => {
             </section>
 
             <section className='home-section'>
-                <CompanionsList
+                {userId ? <> <CompanionsList
                     title="Recently completed sessions"
                     classNames="w-2/3 max-lg:w-full"
-                    companions={recentSessionsCompanions} 
-                    />
+                    companions={recentSessionsCompanions}
+                />
+                </> : <>
+                    <div className="rounded-2xl bg-white shadow-md p-6 text-center space-y-2 max-w-xl mx-auto">
+                        <h2 className="text-xl font-bold text-gray-800">Sign In Required</h2>
+                        <p className="text-gray-600 text-sm">
+                            Please{" "}
+                            <Link href="/sign-in">
+                                <span className="text-blue-600 font-medium hover:underline transition">sign in</span>
+                            </Link>{" "}
+                            or{" "}
+                            <Link href="/sign-in">
+                                <span className="text-blue-600 font-medium hover:underline transition">sign up</span>
+                            </Link>{" "}
+                            to view your recent sessions.
+                        </p>
+                    </div>
+
+                </>
+                }
                 <CTA />
             </section>
 
